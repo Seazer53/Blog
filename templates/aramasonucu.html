@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Arama Sonuçları</title>
+    <style>
+
+        body {
+            text-align: center;
+        }
+
+        div {
+        width: 50%;
+        margin: 0 auto;
+        }
+
+        #ara {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #177199;
+        }
+
+        #btn {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #9C1A1C;
+        }
+
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        th, td {
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+        background-color: red;
+        color: white;
+        }
+
+    </style>
+</head>
+<body style="background-image: url(../static/white.jpeg)">
+<div align="center">
+
+<br>
+<br>
+
+<form action="/aramasonuclari" method="post">
+    Mesaj ara:
+
+    <br>
+
+    <input type="text" id="aranan" name="aranan">
+
+    <br>
+    <br>
+
+    <input type="submit" value="Ara" id="ara">
+
+    <a href="/home"><input type="button" value="Ana Menü" id="btn"></a>
+
+    </form>
+
+    <br>
+    Aranan: <strong>{{ aranan }}</strong>
+    <br>
+
+
+    <table border="1">
+        <tr>
+            <th>Mesaj</th>
+        </tr>
+        {% for mesajr in mesajlar %}
+        <tr>
+            <td>
+                {% for mesaj in mesajr %}
+                  {% if mesaj==aranan %}
+                     <span style="color:red"> {{ mesaj }}</span>
+                  {% else %}
+                     {{ mesaj }}
+                  {% endif %}
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

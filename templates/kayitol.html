@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div {
+        width: 50%;
+        margin: 0 auto;
+        }
+
+        #btn {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #9C1A1C;
+        }
+
+        a:link {
+        color: black;
+        }
+
+        a:visited {
+        color: green;
+        }
+
+        a:hover {
+        color: darkred;
+        }
+
+        a:active {
+        color: red;
+        }
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Giriş Yap</title>
+
+</head>
+<body style="background-image:url(../static/cool.jpeg);color:black">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div>
+
+<h2>Kayıt Ol</h2>
+
+<div>
+<fieldset>
+
+<form action="/kayitkontrol" method="post">
+    Email:
+    <br>
+
+    <input type="email" id="email" name="email" required>
+
+    <br>
+    <br>
+
+    Şifre:
+    <br>
+
+    <input type="password" id="pwd" name="pwd" required>
+
+    <br>
+    <br>
+
+    Şifreyi doğrula:
+
+    <br>
+
+    <input type="password" id="pwd2" name="pwd2" required>
+
+    <br>
+    <br>
+
+    <input type="submit" value="Gönder" id="btn">
+
+    <br>
+
+    <p>Hesabınız var mı? <a href="/">Giriş yapın</a></p>
+
+    <br>
+
+    {% if hata %}
+    <p><strong style="color: #9C1A1C">Hata :</strong> {{ hata }} </p>
+    {% endif %}
+
+</form>
+</fieldset>
+</div>
+
+</div>
+</body>
+</html>

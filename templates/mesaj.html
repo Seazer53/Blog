@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div {
+        width: 50%;
+        margin: 0 auto;
+        }
+
+        #kaydet {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #3A7734;
+        }
+
+        #btn {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #9C1A1C;
+        }
+
+        #page {
+        background-color: #f44336;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        }
+
+        #satir {
+        background-color: #f44336;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        }
+
+
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        th, td {
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+        background-color: red;
+        color: white;
+        }
+
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+    <title>Mesajlar</title>
+</head>
+<body style="background-image: url(../static/white.jpeg)">
+<div>
+
+<br>
+<br>
+
+<form action="/kaydet" method="post">
+    Mesaj kaydet:
+
+    <br>
+
+    <input type="text" id="msj" name="msj">
+
+    <br>
+    <br>
+
+    <input type="submit" value="Kaydet" id="kaydet">
+
+    <a href="/home"><input type="button" value="Ana Menü" id="btn"></a>
+
+</form>
+
+<br>
+<br>
+
+    <table border="1">
+        <tr>
+            <th width="%10">Satır No</th>
+            <th width="%90">Mesajlar</th>
+        </tr>
+
+        {% for mesaj in mesajlar %}
+
+        <tr>
+            <td><a id="satir" href="/tekmesajgoster/{{mesaj[0]}}/{{mesaj[1]}}">{{ mesaj[0] }}</a></td>
+            <td>{{ mesaj[1] }}</td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+
+<br>
+<br>
+
+</div>
+<div align="center">
+    {% for sayfano in range(sayfasayisi) %}
+  <a id="page" href="/mesajlar/{{sayfano + 1}}">{{ sayfano + 1 }}</a>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

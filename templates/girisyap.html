@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div {
+        width: 50%;
+        margin: 0 auto;
+        }
+
+        #btn {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #9C1A1C;
+        }
+
+        a:link {
+        color: white;
+        }
+
+        a:visited {
+        color: green;
+        }
+
+        a:hover {
+        color: cornflowerblue;
+        }
+
+        a:active {
+        color: mediumblue;
+        }
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Giriş Yap</title>
+
+</head>
+<body style="background-image:url(../static/red.jpg);color:white">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div>
+
+<h2>Giriş Yap</h2>
+
+<div>
+
+<fieldset>
+
+<form action="/kontrol" method="post">
+    Email:
+    <br>
+
+    <input type="email" id="email" name="email" required>
+
+    <br>
+    <br>
+
+    Şifre:
+
+    <br>
+
+    <input type="password" id="password" name="password" required>
+
+    <br>
+    <br>
+
+    <input type="submit" value="Gönder" id="btn">
+
+    <br>
+
+    <p>Hesabınız yok mu? <a href="/kayit">Kayıt olun</a></p>
+
+    <br>
+
+    {% if basarili %}
+    <p><strong>{{ basarili }}</strong></p>
+    {% endif %}
+
+    <br>
+
+    {% if error %}
+    <p><strong style="color: #eeeeee">Hata :</strong> {{ error }} </p>
+    {% endif %}
+
+</form>
+</fieldset>
+</div>
+
+</div>
+</body>
+</html>

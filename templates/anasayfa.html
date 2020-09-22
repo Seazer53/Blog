@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div {
+        width: 50%;
+        margin: 0 auto;
+        }
+
+        #btn {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #9C1A1C;
+        }
+
+        #buton  {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #3A7734;
+        }
+
+        #buton2  {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #428bca;
+        }
+
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+    <title>Ziyaretçi Defteri</title>
+
+</head>
+<body style="background-image: url(../static/wall.jpeg)">
+<div style="text-align:center">
+
+<br>
+<br>
+<br>
+<br>
+
+<h3>Hoş geldiniz {{ email }}</h3>
+
+
+<form action="/aramasonuclari" method="post">
+    Mesaj Ara:
+
+    <br>
+
+    <input type="text" name="aranan">
+
+    <br>
+    <br>
+
+    <input type="submit" value="Ara" id="btn" >
+
+    <a href="/mesajlar/1" ><input type="button" value="Mesajlar" id="buton2" ></a>
+
+    <br>
+    <br>
+
+    <a href="/" ><input type="button" value="Çıkış Yap" id="buton" ></a>
+
+</form>
+</div>
+
+</body>
+</html>

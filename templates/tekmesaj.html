@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Mesaj</title>
+    <style>
+        body {
+        text-align: center;
+        }
+
+        #btn {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #9C1A1C;
+        }
+
+        a:link, a:visited {
+        background-color: #f44336;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        }
+
+        a:hover, a:active {
+        background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div style="text-align:center">
+<h2>Mesaj Düzenle</h2>
+
+    <br>
+
+<p>
+        <form action="/guncelle" method="post">
+
+            <input type="hidden" id="satirno" name="satirno" value="{{satirno}}" />
+
+            <input type="text" id="mesaj" name="mesaj" value="{{mesajr}}" />
+
+            <br>
+            <br>
+
+            <input id="btn" type="submit" value="Kaydet">
+
+        </form>
+
+    <br>
+
+    <p>
+        <b>{{ sonuc }}</b>
+</p>
+
+    <br>
+    <br>
+
+    <a href="/mesajlar/1">Mesajlara Dön</a>
+
+</p>
+</div>
+</body>
+</html>
